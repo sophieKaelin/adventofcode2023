@@ -4,7 +4,7 @@ print("\n========== INPUT FILE ==========")
 
 input = []
 
-for line in open('input.txt'):
+for line in open('inputs/day01.txt'):
     input.append(line.replace("\n",""))
 
 print("Input: " + str(input) + "\n")

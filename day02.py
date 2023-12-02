@@ -5,7 +5,7 @@ print("\n========== INPUT FILE ==========")
 
 input, idx = [], 0
 
-for line in open('input.txt'):
+for line in open('inputs/day02.txt'):
     temp = re.split(r';|,|:', line.replace("\n",""))
     input.append([temp[0].lstrip("Game ")]) # Add game number to list
     for t in temp[1:]:

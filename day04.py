@@ -28,12 +28,14 @@ for i, game in enumerate(input):
 print(sum)
 
 print("\n========== Part 2 ==========")
-cardsToCheck = list(range(1,len(input)+1))
-# sum2 = 0
-idx = 0
-while idx < len(cardsToCheck):
-    card = cardsToCheck[idx]
-    cardsToCheck = cardsToCheck + list(range(card+1, card+1+winsPerCard[card]))
-    idx += 1
 
-print(len(cardsToCheck))
+def part2(card):
+    sum = 1
+    for i in list(range(card+1, card+1+winsPerCard[card])):
+        sum += part2(i)
+    return sum
+
+sum2 = 0
+for i in range(1, len(input)+1):
+    sum2 += part2(i)
+print(sum2)
